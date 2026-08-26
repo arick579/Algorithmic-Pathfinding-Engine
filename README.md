@@ -15,7 +15,9 @@ A high-performance C++17 algorithmic engine that benchmarks BFS vs. A* search co
 4. **Automated Dashboarding:** Uses SQLAlchemy to pull remote data back to the local machine, rendering publication-ready Seaborn charts analyzing algorithmic compute vs. memory costs.
 
 ## Visual Proof
-<img width="1751" height="745" alt="image" src="https://github.com/user-attachments/assets/086cb198-96bc-4103-be24-fc87763702cd" />
+
+<img width="1751" height="745" alt="Screenshot 2026-07-25 120020" src="https://github.com/user-attachments/assets/df447da9-9723-4fe7-bacf-633b3545596d" />
+
 
 ##  How to Run Locally
 **0. The Compile Command:**
