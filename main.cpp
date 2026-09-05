@@ -37,7 +37,7 @@ private:
 
 public:
     PathfindingEngine(int s, double density) : size(s) {
-        grid.assign(size * size, 0);
+        grid.assign(static_cast<std::size_t>(size) * size, 0);       
         std::random_device rd; 
         std::mt19937 gen(rd());
         std::uniform_real_distribution<> dis(0.0, 1.0);
@@ -55,7 +55,7 @@ public:
         int nodes_expanded = 0;
         int path_length = -1;
         
-        std::vector<bool> visited(size * size, false);
+    std::vector<bool> visited(static_cast<std::size_t>(size) * size, false);
         
         std::queue<std::pair<Point, int>> q; 
         
@@ -113,8 +113,8 @@ public:
             std::greater<Element>
         > pq(&memory_pool);
         
-        std::pmr::vector<int> g_score(size * size, 1e9, &memory_pool);
-
+std::pmr::vector<int> g_score(static_cast<std::size_t>(size) * size, 1e9, &memory_pool);
+        
         auto start = std::chrono::high_resolution_clock::now();
 
         pq.push({heuristic(0, 0), {{0, 0}, 0}});
