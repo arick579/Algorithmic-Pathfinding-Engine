@@ -1,0 +1,21 @@
+name: Build & Test Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Run pipeline sanity check
+        run: |
+          echo "CI workflow triggered successfully for Algorithmic-Pathfinding-Engine!"
+          echo "Checking system environment..."
+          python3 --version
