@@ -1,3 +1,4 @@
+![Build & Test Pipeline](https://github.com/arick579/Algorithmic-Pathfinding-Engine/actions/workflows/deploy.yml/badge.svg)
 # Algorithmic-Pathfinding-Engine
 
 A high-performance C++17 algorithmic engine that benchmarks BFS vs. A* search complexities, paired with an automated Python ETL pipeline that warehouses the results in Microsoft Azure for visualization.
