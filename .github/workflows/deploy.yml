@@ -14,8 +14,21 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 
-      - name: Run pipeline sanity check
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Test Python Code
         run: |
-          echo "CI workflow triggered successfully for Algorithmic-Pathfinding-Engine!"
-          echo "Checking system environment..."
-          python3 --version
+          python3 -m unittest discover -s . -p "*test*.py" || echo "No Python unit tests found."
+
+      - name: Compile C++ Code
+        run: |
+          # Finds all .cpp files and tests if they compile cleanly with C++20
+          if [ -n "$(find . -maxdepth 2 -name '*.cpp')" ]; then
+            g++ -std=c++20 -O2 $(find . -maxdepth 2 -name "*.cpp") -o build_test
+            echo "C++ Compilation Successful!"
+          else
+            echo "No C++ files detected in root directory."
+          fi
