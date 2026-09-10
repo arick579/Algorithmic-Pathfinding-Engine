@@ -161,3 +161,4 @@ int main(int argc, char* argv[]) {
     engine.runBFS();
     engine.runAStar();
     return 0;
+}
