@@ -10,9 +10,9 @@
 * **Data Visualization:** Pandas, Seaborn, Matplotlib
 
 ## Core Architecture
-1. **Memory-Pooled C++ Engine:** Utilizes 1D grid mapping and C++17 `std::pmr` memory pooling to prevent heap fragmentation during massive Pathfinding Node expansions.
+1. **Memory-Pooled C++ Engine:** Utilizes 1D grid mapping and C++17 std::pmr memory pooling to prevent heap fragmentation during massive Pathfinding Node expansions.
 2. **Automated Subprocess Controller:** A Python daemon that programmatically compiles, executes, and harvests standard output from the C++ binaries across scaling grid complexities.
-3. **Fault-Tolerant Cloud ETL:** Incorporates automated retry logic and batch-processing (`executemany`) to securely upload execution metrics to a remote Microsoft Azure SQL database.
+3. **Fault-Tolerant Cloud ETL:** Incorporates automated retry logic and batch-processing (executemany) to securely upload execution metrics to a remote Microsoft Azure SQL database.
 4. **Automated Dashboarding:** Uses SQLAlchemy to pull remote data back to the local machine, rendering publication-ready Seaborn charts analyzing algorithmic compute vs. memory costs.
 
 ## Visual Proof
