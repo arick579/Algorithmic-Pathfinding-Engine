@@ -25,7 +25,7 @@ query = "SELECT algorithm, grid_size, nodes_expanded, execution_time_us FROM Pat
 df = pd.read_sql_query(query, engine)
 
 if df.empty:
-    print("Error: No data found in Azure. Did the controller.py script finish running?")
+    print("Error: No data found in Azure. Did python_control.py finish running?")
     exit()
 
 print("Data successfully downloaded! Rendering Seaborn graphs...")
